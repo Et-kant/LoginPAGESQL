@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS LoginSystem;
+USE LoginSystem;
+
+CREATE TABLE Users (
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    Username VARCHAR(50) NOT NULL,
+    Email VARCHAR(100) NOT NULL UNIQUE,
+    PasswordHash VARCHAR(255) NOT NULL,
+    CreatedAt DATETIME NOT NULL,
+    INDEX idx_email (Email)
+);
